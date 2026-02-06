@@ -9,9 +9,6 @@ El algoritmo de búsqueda en Profundidad es un algoritmo de búsqueda no informa
 - El **coste del movimiento**:
   - **Vertical**: 1.
   - **Horizontal**: 2.
-- Para el algoritmo **A** se utilizará la **distancia Manhattan** como heurística:
 
-$$ h(n) = {distancia \ horizontal} + {distancia \ vertical} $$
 
-- En el ejemplo, la distancia Manhattan entre $i$ y $e$ es $4$.
 
