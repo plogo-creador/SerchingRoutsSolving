@@ -1,0 +1,15 @@
+
+Para empezar, que es un logaritmo A y A:
+
+Los algoritmos A y A* son algoritmos de búsqueda utilizados en 
+inteligencia artificial para encontrar el camino más corto entre 
+un estado inicial y un estado objetivo. El algoritmo A combina 
+el costo real del camino recorrido con una estimación del costo 
+restante, mientras que A* mejora este enfoque utilizando una 
+heurística admisible, lo que garantiza encontrar la solución 
+óptima de forma más eficiente. Ambos son ampliamente usados en 
+problemas de planificación, videojuegos y sistemas de navegación.
+
+heurística:es una función que estima el costo o la distancia restante para llegar desde un estado actual hasta el objetivo, con el fin de guiar la búsqueda de una solución de manera más eficiente.
+
+
