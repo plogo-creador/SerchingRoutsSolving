@@ -56,7 +56,7 @@ E={i, B, D, C, E, G} F={A, F, **H**} T(H)= T
 #### Excepciones:
 **El orden de prioridades de búsqueda cambia.** **Nuevo orden:** [abajo, arriba, izquierda, derecha]  
 
-*En este caso no pondré límite de profundidad, simplemente empezaré por arriba.*
+**En este caso no pondré límite de profundidad, simplemente empezaré por arriba.**
 
 Como he explicado, **LIFO** funciona siendo lo último que entra lo primero que exploras. Pero al tener 2 puntos de interés, haré como si el orden de prioridades fuese al revés (abajo es más importante que arriba, entonces empezamos la búsqueda por A). Esto también puede realizarse al poner un límite de búsqueda (límite de profundidad) para obligar a no encontrar un punto y empezar por el otro lado.
 
