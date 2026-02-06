@@ -1,5 +1,5 @@
 
-Para empezar, que es un logaritmo A y A:
+### Para empezar, que es un logaritmo A y A:
 
 Los algoritmos A y A* son algoritmos de búsqueda utilizados en 
 inteligencia artificial para encontrar el camino más corto entre 
@@ -12,4 +12,16 @@ problemas de planificación, videojuegos y sistemas de navegación.
 
 heurística:es una función que estima el costo o la distancia restante para llegar desde un estado actual hasta el objetivo, con el fin de guiar la búsqueda de una solución de manera más eficiente.
 
+### Consideraciones:
+
+- Para aquellos algoritmos en los que no es relevante el coste, el orden de los operadores (movimientos) es: **arriba, abajo, izquierda, derecha**.
+- Si algún algoritmo no controla los ciclos, supondremos que existen mecanismos para eliminarlos.
+- El **coste del movimiento**:
+  - **Vertical**: 1.
+  - **Horizontal**: 2.
+- Para el algoritmo **A** se utilizará la **distancia Manhattan** como heurística:
+
+$$ h(n) = {distancia \ horizontal} + {distancia \ vertical} $$
+
+- En el ejemplo, la distancia Manhattan entre $i$ y $e$ es $4$.
 
