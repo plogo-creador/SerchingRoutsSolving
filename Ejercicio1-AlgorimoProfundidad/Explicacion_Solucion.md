@@ -44,4 +44,28 @@ E={i} F={A, **B**} T(B)= F
 E={i, B} F={A, C, **D**} T(D)= F  
 E={i, B, D} F={A, **C**} T(C)= F  
 E={i, B, D, C} F={A, **E**} T(E)= F  
-E={i, B, D, C, E} F={A, F, **G**} T(G)=
+E={i, B, D, C, E} F={A, F, **G**} T(G)= F  
+E={i, B, D, C, E, G} F={A, F, **H**} T(H)= T  
+
+**Solución:** `i -> B -> C -> E -> G -> H -> e1`
+
+---
+
+### Búsqueda de **e2**
+
+#### Excepciones:
+**El orden de prioridades de búsqueda cambia.** **Nuevo orden:** [abajo, arriba, izquierda, derecha]  
+
+*En este caso no pondré límite de profundidad, simplemente empezaré por arriba.*
+
+Como he explicado, **LIFO** funciona siendo lo último que entra lo primero que exploras. Pero al tener 2 puntos de interés, haré como si el orden de prioridades fuese al revés (abajo es más importante que arriba, entonces empezamos la búsqueda por A). Esto también puede realizarse al poner un límite de búsqueda (límite de profundidad) para obligar a no encontrar un punto y empezar por el otro lado.
+
+E={} F={**i**} T(i)= F  
+E={i} F={B, **A**} T(A)= F  
+E={i, A} F={B, J, **I**} T(I)= F  
+E={i, A, I} F={B, **J**} T(J)= F  
+E={i, A, I, J} F={B, **K**} T(K)= F  
+E={i, A, I, J, K} F={B, **L**} T(L)= F  
+E={i, A, I, J, K, L} F={B, M, **N**} T(N)= T  
+
+**Solución:** `i -> A -> I -> J -> K -> L -> N -> e2`
