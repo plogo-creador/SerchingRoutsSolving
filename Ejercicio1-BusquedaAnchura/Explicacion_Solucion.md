@@ -1,4 +1,4 @@
-1. Búsqueda en Anchura (BFS)
+# 1. Búsqueda en Anchura (BFS)
 Este algoritmo expande los nodos nivel por nivel. Utiliza una cola (FIFO) para la frontera.
 
 | Paso | Nodo Expandido | Frontera (Cola de Nodos Generados) | Explorados |

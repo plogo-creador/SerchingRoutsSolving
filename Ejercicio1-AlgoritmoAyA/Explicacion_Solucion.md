@@ -1,4 +1,4 @@
-## 2️⃣ A* (con tabla completa g, h, f)
+# 1. A* (con tabla completa g, h, f)
 
 ### Fórmulas
 
