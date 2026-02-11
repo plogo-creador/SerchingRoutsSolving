@@ -36,36 +36,26 @@ Usamos un **Algoritmo LIFO (Pila)**.
 * **= F o = T:** Se refiere a si ha encontrado el nodo objetivo. En este caso "e", tiene dos variaciones: **F** (False) o **T** (True).
 
 ---
+Límite de Profundidad 5
+i expande a A (4,4) [Arriba]. (Prof. 1)
 
-### Búsqueda de **e1**
+A expande a B (4,3) [Izquierda]. (Prof. 2) -> B no tiene salidas válidas.
 
-E={} F={**i**} T(i)= F  
-E={i} F={A, **B**} T(B)= F  
-E={i, B} F={A, C, **D**} T(D)= F  
-E={i, B, D} F={A, **C**} T(C)= F  
-E={i, B, D, C} F={A, **E**} T(E)= F  
-E={i, B, D, C, E} F={A, F, **G**} T(G)= F  
-E={i, B, D, C, E, G} F={A, F, **H**} T(H)= T  
+Backtrack a A, expande a C (4,5) [Derecha]. (Prof. 2)
 
-**Solución:** `i -> B -> C -> E -> G -> H -> e1`
+C expande a D (3,5) [Arriba]. (Prof. 3)
 
----
+D expande a E (2,5) [Arriba]. (Prof. 4)
 
-### Búsqueda de **e2**
+E expande a F (2,4) [Izquierda]. (Prof. 5)
 
-#### Excepciones:
-**El orden de prioridades de búsqueda cambia.** **Nuevo orden:** [abajo, arriba, izquierda, derecha]  
+F no puede expandirse más porque el siguiente nodo (2,3) estaría en profundidad 6.
 
-**En este caso no pondré límite de profundidad, simplemente empezaré por arriba.**
+Resultado: Fracaso por corte (Cutoff).
 
-Como he explicado, **LIFO** funciona siendo lo último que entra lo primero que exploras. Pero al tener 2 puntos de interés, haré como si el orden de prioridades fuese al revés (abajo es más importante que arriba, entonces empezamos la búsqueda por A). Esto también puede realizarse al poner un límite de búsqueda (límite de profundidad) para obligar a no encontrar un punto y empezar por el otro lado.
+Tipo de fracaso: Fracaso incompleto. La meta existe pero no es alcanzable dentro del límite.
 
-E={} F={**i**} T(i)= F  
-E={i} F={B, **A**} T(A)= F  
-E={i, A} F={B, J, **I**} T(I)= F  
-E={i, A, I} F={B, **J**} T(J)= F  
-E={i, A, I, J} F={B, **K**} T(K)= F  
-E={i, A, I, J, K} F={B, **L**} T(L)= F  
-E={i, A, I, J, K, L} F={B, M, **N**} T(N)= T  
+Límite de Profundidad 6
+Al aumentar el límite a 6, el nodo F puede expandirse hacia la izquierda para generar el nodo e (2,3).
 
-**Solución:** `i -> A -> I -> J -> K -> L -> N -> e2`
+Resultado: Éxito. La solución se encuentra justo en el límite.
