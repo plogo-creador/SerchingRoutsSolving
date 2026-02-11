@@ -26,26 +26,40 @@ Usamos un **Algoritmo LIFO (Pila)**.
 
 **Explicación ejemplificada:** Una pila de libros o la bandeja de entrada de documentos físicos (lo último que llega se queda arriba y es lo primero que atiendes).
 ---
-Límite de Profundidad 5
-i expande a A (4,4) [Arriba]. (Prof. 1)
+## 2. Análisis de Búsqueda en Profundidad (DFS)
 
-A expande a B (4,3) [Izquierda]. (Prof. 2) -> B no tiene salidas válidas.
+Se analiza el comportamiento del algoritmo con diferentes límites de profundidad, respetando estrictamente el orden de prioridad: **Arriba (↑), Abajo (↓), Izquierda (←), Derecha (→)**.
 
-Backtrack a A, expande a C (4,5) [Derecha]. (Prof. 2)
+---
 
-C expande a D (3,5) [Arriba]. (Prof. 3)
+### Caso A: Límite de Profundidad L = 5
 
-D expande a E (2,5) [Arriba]. (Prof. 4)
+La traza de ejecución sigue el camino más profundo permitido por la prioridad de los operadores:
 
-E expande a F (2,4) [Izquierda]. (Prof. 5)
+1.  **i (5,4)** expande a **A (4,4)** `[Arriba]` (Profundidad 1).
+2.  **A (4,4)** expande a **B (4,3)** `[Izquierda]` (Profundidad 2).
+    * **Nota:** B no tiene salidas válidas por la presencia de obstáculos y muros.
+3.  **Backtrack** a **A**, expande a **C (4,5)** `[Derecha]` (Profundidad 2).
+4.  **C (4,5)** expande a **D (3,5)** `[Arriba]` (Profundidad 3).
+5.  **D (3,5)** expande a **E (2,5)** `[Arriba]` (Profundidad 4).
+6.  **E (2,5)** expande a **F (2,4)** `[Izquierda]` (Profundidad 5).
+7.  **F (2,4)** no puede expandirse más: el siguiente nodo **(2,3)** requeriría **Profundidad 6**.
 
-F no puede expandirse más porque el siguiente nodo (2,3) estaría en profundidad 6.
+**Resultados del Caso A:**
+* **Resultado:** Fracaso por corte (**Cutoff**).
+* **Tipo de error:** Fracaso incompleto. La meta existe en el espacio de estados, pero no es alcanzable dentro del límite de profundidad establecido.
 
-Resultado: Fracaso por corte (Cutoff).
+---
 
-Tipo de fracaso: Fracaso incompleto. La meta existe pero no es alcanzable dentro del límite.
+### Caso B: Límite de Profundidad L = 6
 
-Límite de Profundidad 6
-Al aumentar el límite a 6, el nodo F puede expandirse hacia la izquierda para generar el nodo e (2,3).
+Al incrementar el límite de búsqueda a 6, el algoritmo permite una expansión adicional desde el último nodo abierto en la frontera:
 
-Resultado: Éxito. La solución se encuentra justo en el límite.
+* Desde **F (2,4)** en el nivel 5, el algoritmo ahora puede ejecutar el operador `[Izquierda]`.
+* Se genera y reconoce el nodo **e (2,3)** en el **Nivel 6**.
+
+**Resultados del Caso B:**
+* **Resultado:** Éxito.
+* **Conclusión:** La solución es hallada al coincidir el límite de profundidad con el nivel en el que se encuentra el objetivo.
+
+---
