@@ -26,7 +26,7 @@ Usamos un **Algoritmo LIFO (Pila)**.
 
 **Explicación ejemplificada:** Una pila de libros o la bandeja de entrada de documentos físicos (lo último que llega se queda arriba y es lo primero que atiendes).
 ---
-## 2. Análisis de Búsqueda en Profundidad (DFS)
+## Análisis de Búsqueda en Profundidad (DFS)
 
 Se analiza el comportamiento del algoritmo con diferentes límites de profundidad, respetando estrictamente el orden de prioridad: **Arriba (↑), Abajo (↓), Izquierda (←), Derecha (→)**.
 
